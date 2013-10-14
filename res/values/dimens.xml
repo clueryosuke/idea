@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <!-- menu bottom -->
+    <dimen name="travel_door_width_start">80dp</dimen>
+    <dimen name="addin_btn_width">150dp</dimen>
+    <dimen name="addin_btn_height">40dp</dimen>
+    <dimen name="addin_btn_width_sw600dp">180dp</dimen>
+    <dimen name="addin_btn_width_sw800dp">250dp</dimen>
+    <dimen name="addin_btn_height_sw600dp">45dp</dimen>
+
+    <!-- menu bottom dimen -->
+    <dimen name="menu_bottom_1_height">60dp</dimen>
+    <dimen name="menu_bottom_2_width">140dp</dimen>
+    <dimen name="menu_bottom_2_height">60dp</dimen>
+    <dimen name="menu_footer_text_mar_bot">3dp</dimen>
+    <dimen name="menu_bottom_height">65dp</dimen>
+    <dimen name="menu_bottom_height_small">60dp</dimen>
+    <dimen name="menu_bottom_height_normal_xhdpi">65dp</dimen>
+    <dimen name="menu_bottom_height_normal_mdpi">70dp</dimen>
+    <dimen name="menu_bottom_height_large">80dp</dimen>
+    <dimen name="menu_bottom_height_large_xhdpi">100dp</dimen>
+    <dimen name="menu_bottom_height_large_sw600dp">110dp</dimen>
+    <dimen name="menu_bottom_height_large_sw800dp">130dp</dimen>
+    <dimen name="menu_bottom_item_width">64dp</dimen>
+    <dimen name="menu_bottom_item_width_normal_xhdpi">72dp</dimen>
+    <dimen name="menu_bottom_item_width_normal_mdpi">64dp</dimen>
+    <dimen name="menu_bottom_item_width_large">96dp</dimen>
+    <dimen name="menu_bottom_item_width_large_xhdpi">120dp</dimen>
+    <dimen name="menu_bottom_item_width_large_sw800dp">160dp</dimen>
+    <dimen name="menu_bottom_item_height">30dp</dimen>
+    <dimen name="menu_bottom_pad_top">3dp</dimen>
+    <dimen name="menu_bottom_pad_right">4dp</dimen>
+    <dimen name="menu_bottom_pad_left">4dp</dimen>
+    <dimen name="topmenu_image_height">90dp</dimen>
+    <dimen name="topmenu_image_height_normal_mdpi">69dp</dimen>
+    <dimen name="topmenu_image_height_normal_ldpi">85dp</dimen>
+    <dimen name="topmenu_image_height_normal_hdpi">90dp</dimen>
+    <dimen name="topmenu_image_height_small">60dp</dimen>
+    <dimen name="topmenu_smallimage_height">45dp</dimen>
+    <dimen name="topmenu_smallimage_height_small">30dp</dimen>
+    <dimen name="topmenu_smallimage_height_normal_mdpi">36dp</dimen>
+    <dimen name="topmenu_smallimage_height_normal_ldpi">42dp</dimen>
+    <dimen name="topmenu_image_width_normal_xhdpi">90dp</dimen>
+    <dimen name="topmenu_image_height_normal_xhdpi">97dp</dimen>
+    <dimen name="topmenu_image_height_normal_xhdpi_3x">291dp</dimen>
+    <dimen name="topmenu_smallimage_width_normal_xhdpi">45dp</dimen>
+    <dimen name="topmenu_image_height_large">126dp</dimen>
+    <dimen name="topmenu_image_height_large_3x">378dp</dimen>
+    <dimen name="topmenu_image_height_large_sw600dp">160dp</dimen>
+    <dimen name="topmenu_image_height_large_sw600dp_3x">480dp</dimen>
+    <dimen name="topmenu_image_height_large_sw800dp">210dp</dimen>
+    <dimen name="topmenu_image_height_large_sw800dp_3x">630dp</dimen>
+    <dimen name="topmenu_image_width_large">120dp</dimen>
+    <dimen name="topmenu_image_width_large_sw600dp">150dp</dimen>
+    <dimen name="topmenu_image_width_large_sw800dp">200dp</dimen>
+    <dimen name="topmenu_smallimage_height_large">65dp</dimen>
+    <dimen name="topmenu_smallimage_height_large_sw600dp">80dp</dimen>
+    <dimen name="topmenu_smallimage_height_large_sw800dp">105dp</dimen>
+    <dimen name="topmenu_smallimage_width_large">60dp</dimen>
+    <dimen name="topmenu_smallimage_width_large_sw600dp">75dp</dimen>
+    <dimen name="topmenu_smallimage_width_large_sw800dp">100dp</dimen>
+    <dimen name="topmenu_btn_focus_size_small">8dp</dimen>
+    <dimen name="topmenu_dimen_focus_small">20dp</dimen>
+    <dimen name="topmenu_btn_focus_size_normal_hdpi">8dp</dimen>
+    <dimen name="topmenu_dimen_focus_normal_hdpi">25dp</dimen>
+    <dimen name="topmenu_btn_focus_size_large">16dp</dimen>
+    <dimen name="topmenu_dimen_focus_large">30dp</dimen>
+    <dimen name="store_padding_top">3dp</dimen>
+    <dimen name="store_button_height">35dp</dimen>
+    <dimen name="store_button_height_sw600dp">50dp</dimen>
+    <dimen name="store_padding_button">10dp</dimen>
+    <dimen name="store_padding_button_sw600dp">30dp</dimen>
+    <dimen name="store_button_size">40dp</dimen>
+    <dimen name="store_button_size_sw600dp">60dp</dimen>
+    <dimen name="store_bar_height">80dp</dimen>
+    <dimen name="store_bar_height_sw600dp">100dp</dimen>
+    <dimen name="store_bar_height_sw800dp">150dp</dimen>
+    <dimen name="store_star_marginleft">3dp</dimen>
+    <dimen name="storecategory_list_padding">5dp</dimen>
+    <dimen name="country_overview_btnsize">80dp</dimen>
+    <dimen name="country_overview_btnsize_small">55dp</dimen>
+    <dimen name="country_overview_btnsize_normal_mdpi">65dp</dimen>
+    <dimen name="country_overview_btnsize_normal_ldpi">70dp</dimen>
+    <dimen name="country_overview_btnsize_normal_hdpi">80dp</dimen>
+    <dimen name="country_overview_btnsize_normal_xhdpi">85dp</dimen>
+    <dimen name="country_overview_btnsize_large">100dp</dimen>
+    <dimen name="country_overview_btnsize_sw600dp">130dp</dimen>
+    <dimen name="country_overview_btnsize_sw800dp">170dp</dimen>
+    <dimen name="spot_button_area_size_normal_xhdpi">70dp</dimen>
+    <dimen name="spot_button_area_size_normal_mdpi">50dp</dimen>
+    <dimen name="spot_button_area_size_normal_ldpi">60dp</dimen>
+    <dimen name="spot_button_area_size_large">90dp</dimen>
+    <dimen name="spot_button_area_size_sw600dp">120dp</dimen>
+    <dimen name="spot_button_area_size_sw800dp">160dp</dimen>
+    <dimen name="spot_button_area_size_small">45dp</dimen>
+    <dimen name="spot_button_textSize_normal_ldpi">10dp</dimen>
+    <dimen name="information_height_button">40dp</dimen>
+    <dimen name="information_height_button_sw600dp">70dp</dimen>
+    <dimen name="information_textsize">15dp</dimen>
+    <dimen name="information_textsize_sw600dp">20dp</dimen>
+    <dimen name="information_padding_bound">10dp</dimen>
+
+    <!-- menu bottom text -->
+    <dimen name="menu_text_size">10dp</dimen>
+    <dimen name="menu_text_size_sw800dp">18dp</dimen>
+    <dimen name="menu_text_margin_bottom">17dp</dimen>
+    <dimen name="menu_text_margin_bottom_normal_xhdpi">10dp</dimen>
+    <dimen name="menu_text_margin_bottom_normal_mdpi">25dp</dimen>
+    <dimen name="menu_text_margin_bottom_large">40dp</dimen>
+
+    <!-- map spot -->
+    <dimen name="title_padding">10dp</dimen>
+    <dimen name="title_fontsize">20dp</dimen>
+    <!-- map default -->
+
+    <dimen name="width_bar_common">50dp</dimen>
+    <dimen name="margin_left_back">5dp</dimen>
+    <dimen name="margin_right_add">5dp</dimen>
+    <dimen name="margin_bottom_layout_gps_route">70dp</dimen>
+    <dimen name="width_gps_route_common">50dp</dimen>
+    <dimen name="height_gps_route_common">60dp</dimen>
+    <dimen name="height_gps_route_common_sw600dp">80dp</dimen>
+    <dimen name="height_gps_route_common_2">35dp</dimen>
+    <dimen name="height_gps_route_common_2_sw600dp">50dp</dimen>
+    <dimen name="height_gps_route_common_2_sw800dp">60dp</dimen>
+    <dimen name="margin_left_gps_route">10dp</dimen>
+    <dimen name="margin_left_gps_route_sw800dp">20dp</dimen>
+    <dimen name="menu_map_width">100dp</dimen>
+    <dimen name="menu_map_height">30dp</dimen>
+    <dimen name="menu_map_width_sw600dp">180dp</dimen>
+    <dimen name="menu_map_width_sw800dp">240dp</dimen>
+    <dimen name="menu_map_height_sw600dp">45dp</dimen>
+    <dimen name="menu_map_height_sw800dp">60dp</dimen>
+
+    <!-- add store -->
+    <dimen name="add_store_button_height">35dp</dimen>
+    <dimen name="add_store_button_height_sw600dp">60dp</dimen>
+    <dimen name="add_store_button_height_sw800dp">80dp</dimen>
+    <dimen name="add_store_button_height_large">60dp</dimen>
+    <dimen name="add_store_button_width">40dp</dimen>
+    <dimen name="add_store_button_margin_left">10dp</dimen>
+    <dimen name="add_store_button_margin_right">10dp</dimen>
+    <dimen name="add_store_button_margin_top">5dp</dimen>
+    <dimen name="add_store_button_margin_top_sw600dp">20dp</dimen>
+    <dimen name="add_store_text_width">90dp</dimen>
+    <dimen name="add_store_text_width_sw800dp">150dp</dimen>
+    <dimen name="add_store_text_height">50dp</dimen>
+    <dimen name="add_store_text_height_sw600dp">70dp</dimen>
+    <dimen name="add_store_text_height_2">37dp</dimen>
+    <dimen name="add_store_text_margin_left">10dp</dimen>
+    <dimen name="add_store_arrow_width">15dp</dimen>
+    <dimen name="add_store_arrow_height">15dp</dimen>
+    <!-- edit store -->
+    <dimen name="edit_store_button_height">32dp</dimen>
+    <dimen name="edit_store_button_height_large">25dp</dimen>
+    <dimen name="edit_store_button_width">40dp</dimen>
+    <dimen name="edit_store_button_margin_left">5dp</dimen>
+    <dimen name="edit_store_button_margin_right">5dp</dimen>
+    <dimen name="edit_store_button_margin_top">2dp</dimen>
+    <dimen name="edit_store_button_margin_top_2">6dp</dimen>
+    <dimen name="edit_store_text_width">90dp</dimen>
+    <dimen name="edit_store_text_height">50dp</dimen>
+    <dimen name="edit_store_text_margin_left">10dp</dimen>
+    <dimen name="edit_store_arrow_width">30dp</dimen>
+    <dimen name="edit_store_arrow_height">30dp</dimen>
+    <dimen name="dialog_arrow_width">10dp</dimen>
+    <dimen name="dialog_arrow_height">10dp</dimen>
+    <dimen name="dialog_arrow_width_sw600dp">20dp</dimen>
+    <dimen name="dialog_arrow_height_sw600dp">20dp</dimen>
+
+    <!-- addin item -->
+    <dimen name="addin_item_text_size">18dp</dimen>
+    <dimen name="addin_item_text_size_sw800dp">25dp</dimen>
+    <dimen name="add_store_item_size_sw800dp">20dp</dimen>
+
+    <!-- share_store_mymap -->
+    <dimen name="share_store_mymap_button_height">35dp</dimen>
+    <dimen name="share_store_mymap_button_height_large">60dp</dimen>
+    <dimen name="share_store_mymap_button_width">40dp</dimen>
+    <dimen name="share_store_mymap_button_margin_left">10dp</dimen>
+    <dimen name="share_store_mymap_button_margin_right">10dp</dimen>
+    <dimen name="share_store_mymap_button_margin_top">5dp</dimen>
+    <dimen name="share_store_mymap_text_width">90dp</dimen>
+    <dimen name="share_store_mymap_text_width_sw800dp">150dp</dimen>
+    <dimen name="share_store_mymap_text_height">50dp</dimen>
+    <dimen name="share_store_mymap_text_margin_left">10dp</dimen>
+    <dimen name="share_store_mymap_arrow_width">15dp</dimen>
+    <dimen name="share_store_mymap_arrow_height">15dp</dimen>
+
+    <!-- share_friend_all_menu -->
+    <dimen name="share_friend_all_menu_margin_left_right">10dp</dimen>
+
+    <!-- map add store,share .. -->
+    <dimen name="add_share_store_map_margin_top">10dp</dimen>
+    <dimen name="add_share_store_map_height_width_ok_cancel">120dp</dimen>
+    <dimen name="add_share_store_map_height_width_ok_cancel_sw600dp">180dp</dimen>
+    <dimen name="picker_button_height_sw600dp">60dp</dimen>
+    <dimen name="width_bar_header">45dp</dimen>
+    <dimen name="margin_top_text_bar_header">10dp</dimen>
+    <dimen name="width_image">170dp</dimen>
+    <dimen name="height_image">220dp</dimen>
+    <dimen name="width_image_sw600dp">300dp</dimen>
+    <dimen name="height_image_sw600dp">350dp</dimen>
+    <dimen name="width_image_sw800dp">400dp</dimen>
+    <dimen name="height_image_sw800dp">450dp</dimen>
+    <dimen name="picker_width_sw600dp">400dp</dimen>
+    <dimen name="picker_height_sw600dp">300dp</dimen>
+
+    <!-- pin -->
+    <dimen name="pin_padding_top">5dp</dimen>
+    <dimen name="pin_padding_bottom">5dp</dimen>
+    <dimen name="pin_padding_left">5dp</dimen>
+    <dimen name="pin_padding_right">5dp</dimen>
+    <!-- end pin -->
+
+
+    <!-- feedback -->
+    <dimen name="feedback_padding_left_right">10dp</dimen>
+    <dimen name="feedback_size_bar">25dp</dimen>
+    <dimen name="feedback_size_bar_sw600dp">50dp</dimen>
+    <dimen name="feedback_padding_top">10dp</dimen>
+    <dimen name="feedback_padding_top_sw600dp">30dp</dimen>
+    <dimen name="padding_image">6dp</dimen>
+    <dimen name="text_size">12dp</dimen>
+    <dimen name="text_size_edit_sw600dp">25dp</dimen>
+    <dimen name="text_size_2">16dp</dimen>
+    <dimen name="text_size_2_sw800dp">22dp</dimen>
+    <!-- coupon -->
+    <dimen name="coupon_store_title_padding_top">10dp</dimen>
+    <dimen name="coupon_store_title_padding_bottom">10dp</dimen>
+    <dimen name="coupon_store_bar_height">20dp</dimen>
+    <dimen name="coupon_store_info_height">80dp</dimen>
+    <!-- end coupon -->
+
+
+    <!-- coupon & point -->
+    <dimen name="coupon_point_title_padding_top">10dp</dimen>
+    <dimen name="coupon_point_title_padding_bottom">10dp</dimen>
+    <dimen name="coupon_point_bar_height">30dp</dimen>
+    <dimen name="coupon_point_bar_height_sw600dp">50dp</dimen>
+    <dimen name="coupon_point_margin_left">10dp</dimen>
+    <dimen name="coupon_point_margin_right">20dp</dimen>
+    <!-- end coupon -->
+    <!-- login -->
+    <dimen name="login_width">80dp</dimen>
+    <dimen name="login_height">35dp</dimen>
+    <dimen name="login_text_size">8dp</dimen>
+    <dimen name="login_width_sw600dp">130dp</dimen>
+    <dimen name="login_height_sw600dp">45dp</dimen>
+    <dimen name="login_text_size_sw600dp">12dp</dimen>
+
+    <!-- margin top,left,right,bottom dialog_policy -->
+
+    <dimen name="margin_top_left_right_bottom">10dp</dimen>
+    <dimen name="menu_bottom_height_bookmark">280dp</dimen>
+    <dimen name="back_press_size_height">40dp</dimen>
+    <dimen name="back_press_size_width">60dp</dimen>
+    <dimen name="back_press_size_height_tablet">70dp</dimen>
+    <dimen name="back_press_size_width_tablet">150dp</dimen>
+    <dimen name="back_press_size_height_tablet_sw800dp">90dp</dimen>
+    <dimen name="back_press_size_width_tablet_sw800dp">200dp</dimen>
+    <dimen name="back_press_size_height_tablet_btn">60dp</dimen>
+    <dimen name="back_press_size_width_tablet_btn">50dp</dimen>
+    <dimen name="back_press_size_height_tablet_btn_sw800dp">80dp</dimen>
+    <dimen name="back_press_size_width_tablet_btn_sw800dp">65dp</dimen>
+    <dimen name="star_size_width">20dp</dimen>
+    <dimen name="star_size_tablet_width">30dp</dimen>
+    <dimen name="star_size_tablet_width_map_popup_sw800dp">25dp</dimen>
+    <dimen name="star_size_tablet_height">30dp</dimen>
+    <dimen name="star_size_tablet_width_sw800dp">40dp</dimen>
+    <dimen name="star_size_tablet_height_sw800dp">40dp</dimen>
+    <dimen name="star_size_tablet_margintop">80dp</dimen>
+    <dimen name="star_size_tablet_margintop_store">60dp</dimen>
+    <dimen name="star_size_tablet_margintop_sw800dp">100dp</dimen>
+    <dimen name="menu_bottom_icon_width">35dp</dimen>
+    <dimen name="menu_bottom_icon_height">35dp</dimen>
+    <dimen name="menu_bottom_icon_width_sw800dp">45dp</dimen>
+    <dimen name="header_bar_tablet_height">60dp</dimen>
+    <dimen name="header_bar_tablet_height_sw800dp">80dp</dimen>
+    <dimen name="map_save_cancel_width">88dp</dimen>
+    <dimen name="map_save_cancel_width_sw800dp">120dp</dimen>
+    <dimen name="width_height_star_map">15dp</dimen>
+    <dimen name="width_height_star_map_sw600dp">22dp</dimen>
+    <dimen name="width_pop_up_map">150dp</dimen>
+    <dimen name="height_pop_up_map">40dp</dimen>
+    <dimen name="width_pop_up_map_sw600dp">280dp</dimen>
+    <dimen name="height_pop_up_map_sw600dp">55dp</dimen>
+    <dimen name="width_pop_up_map_sw800dp">280dp</dimen>
+    <dimen name="height_pop_up_map_sw800dp">70dp</dimen>
+
+</resources>

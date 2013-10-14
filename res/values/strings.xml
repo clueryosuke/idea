@@ -4,5 +4,21 @@
     <string name="app_name">Idea</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+	<!-- Idea Main -->
+    <string name="idea_main_title">作成</string>
+    <string name="idea_main_theme">テーマ</string>
+    <string name="idea_main_delete_edit">削除</string>
+    <string name="idea_main_save">保存</string>
 
+	<!-- Menu -->
+    <string name="menu_home_jp">ホーム</string>
+    <string name="menu_map_jp">マップ</string>
+    <string name="menu_bookmark_jp">ブックマーク</string>
+    <string name="menu_mrt_jp">交通</string>
+    <string name="menu_search_jp">検索</string>
+    <string name="menu_home_en">Home</string>
+    <string name="menu_map_en">Map</string>
+    <string name="menu_bookmark_en">Bookmark</string>
+    <string name="menu_mrt_en">Transport</string>
+    <string name="menu_search_en">Search</string>
 </resources>
