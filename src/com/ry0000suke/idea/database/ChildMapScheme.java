@@ -20,7 +20,7 @@ public class ChildMapScheme {
 
 	private static final String DATABASE_CREATE_TABLE = "create table "
 		+ TABLE_NAME + "("
-		+ CHILD_ID + " integer autoincrement, "
+		+ CHILD_ID + " integer primary key autoincrement, "
 		+ PARENT_ID + " integer, "
 		+ POSITION_NUMBER + " integer, "
 		+ TEXT1 + " text, "
@@ -31,12 +31,12 @@ public class ChildMapScheme {
 		+ TEXT6 + " text, "
 		+ TEXT7 + " text, "
 		+ TEXT8 + " text, "
-		+ TEXT9 + " text, "
-		+ "primary key (" + CHILD_ID + ", " + PARENT_ID + ")"
+		+ TEXT9 + " text "
+		//+ "primary key (" + CHILD_ID + ", " + PARENT_ID + ")"
 		+ ");";
 
 	private static final String DATABASE_CREATE_INDEX = "create index "
-		+ "i1 on"
+		+ "i1 on "
 		+ TABLE_NAME
 		+ " ( " + POSITION_NUMBER + " );";
 

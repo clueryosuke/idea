@@ -9,16 +9,25 @@
     <string name="idea_main_theme">テーマ</string>
     <string name="idea_main_delete_edit">削除</string>
     <string name="idea_main_save">保存</string>
+    <string name="idea_main_all_view">全体</string>
+	<string name="map1">1</string>
+	<string name="map2">2</string>
+	<string name="map3">3</string>
+	<string name="map4">4</string>
+	<string name="map5">テーマ</string>
+	<string name="map6">6</string>
+	<string name="map7">7</string>
+	<string name="map8">8</string>
+	<string name="map9">9</string>
 
 	<!-- Menu -->
-    <string name="menu_home_jp">ホーム</string>
-    <string name="menu_map_jp">マップ</string>
-    <string name="menu_bookmark_jp">ブックマーク</string>
-    <string name="menu_mrt_jp">交通</string>
-    <string name="menu_search_jp">検索</string>
-    <string name="menu_home_en">Home</string>
-    <string name="menu_map_en">Map</string>
-    <string name="menu_bookmark_en">Bookmark</string>
-    <string name="menu_mrt_en">Transport</string>
-    <string name="menu_search_en">Search</string>
+    <string name="menu_top">トップ</string>
+    <string name="menu_create">作成</string>
+	<string name="menu_all_view">一覧</string>
+
+	<!-- AllView -->
+	<string name="all_view_title">一覧</string>
+	<string name="all_view_delete_edit">削除</string>
+	
+
 </resources>

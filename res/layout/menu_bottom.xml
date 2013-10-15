@@ -89,60 +89,6 @@
                 android:textSize="@dimen/menu_text_size" />
         </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/menu_layout_4"
-            android:layout_width="@dimen/menu_bottom_item_width"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:background="@drawable/menu_normal" >
-
-            <ImageView
-                android:id="@+id/menu_bottom_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:background="@drawable/tabbar_mrt_1_4"
-                android:clickable="true"
-                android:scaleType="centerInside" />
-
-            <TextView
-                android:id="@+id/menu_text_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="@dimen/menu_text_margin_bottom"
-                android:textColor="@color/white"
-                android:textSize="@dimen/menu_text_size" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/menu_layout_5"
-            android:layout_width="@dimen/menu_bottom_item_width"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:background="@drawable/menu_normal" >
-
-            <ImageView
-                android:id="@+id/menu_bottom_5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:background="@drawable/tabbar_search_1_5"
-                android:clickable="true"
-				android:scaleType="centerInside"/>
-
-            <TextView
-                android:id="@+id/menu_text_5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="@dimen/menu_text_margin_bottom"
-                android:textColor="@color/white"
-                android:textSize="@dimen/menu_text_size" />
-
-        </RelativeLayout>
     </LinearLayout>
 
 </RelativeLayout>

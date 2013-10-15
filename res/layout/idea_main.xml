@@ -144,24 +144,34 @@
 		android:layout_width="fill_parent"
 		android:layout_weight="1"
 		android:layout_height="0dp">
+		<ImageView
+			android:id="@+id/popup_menu"
+			android:layout_width="70dp"
+			android:layout_height="70dp"
+			android:layout_margin="5dp"
+			android:layout_weight="1"
+			android:gravity="center"
+			android:src="@drawable/map5" />
+		<!--
 		<Button
 			android:id="@+id/idea_main_btn"
 			android:layout_width="200dp"
-			android:layout_height="100dp"
+			android:layout_height="50dp"
 			android:layout_weight="1"
 			android:gravity="center"
 			android:text="@string/dummy_button" />
+		-->
 		<Button
 			android:id="@+id/save_btn"
 			android:layout_width="200dp"
-			android:layout_height="100dp"
+			android:layout_height="50dp"
 			android:layout_weight="1"
 			android:gravity="center"
 			android:text="@string/dummy_button" />
 		<Button
 			android:id="@+id/all_view_btn"
 			android:layout_width="200dp"
-			android:layout_height="100dp"
+			android:layout_height="50dp"
 			android:layout_weight="1"
 			android:gravity="center"
 			android:text="@string/dummy_button" />

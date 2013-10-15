@@ -1,5 +1,6 @@
 package com.ry0000suke.idea.database;
 
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.content.ContentValues;
 
@@ -25,5 +26,11 @@ public class ParentMapDAO {
 		inititalValue.put(ParentMapScheme.TEXT9, text9);
 
 		return db.insert(ParentMapScheme.TABLE_NAME, null, inititalValue);
+	}
+
+	public Cursor getAllList() {
+		String sql = "SELECT * FROM parent_map";
+		Cursor mcursor = db.rawQuery(sql, null);
+		return mcursor;
 	}
 }

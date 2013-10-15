@@ -18,7 +18,7 @@ public class ParentMapScheme {
 
 	private static final String DATABASE_CREATE_TABLE = "create table "
 		+ TABLE_NAME + "("
-		+ PARENT_ID + " integer autoincrement, "
+		+ PARENT_ID + " integer primary key autoincrement, "
 		+ TEXT1 + " text, "
 		+ TEXT2 + " text, "
 		+ TEXT3 + " text, "
@@ -27,8 +27,8 @@ public class ParentMapScheme {
 		+ TEXT6 + " text, "
 		+ TEXT7 + " text, "
 		+ TEXT8 + " text, "
-		+ TEXT9 + " text, "
-		+ "primary key (" + PARENT_ID + ")"
+		+ TEXT9 + " text "
+		//+ "primary key (" + PARENT_ID + ")"
 		+ ");";
 
 	public static void onCreate(SQLiteDatabase db) {
