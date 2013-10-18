@@ -11,43 +11,43 @@
 		android:orientation="vertical"
 		android:layout_width="fill_parent"
 		android:layout_height="fill_parent">
-	
-	    <RelativeLayout
-	        android:id="@+id/idea_main_header"
-	        android:layout_width="fill_parent"
-	        android:layout_height="60dp" >
-	
-	    	<ImageView
-	    	    android:id="@+id/idea_main_header"
-	    	    android:layout_width="fill_parent"
-	    	    android:layout_height="fill_parent"
-	    	    android:background="@drawable/navbar_red" />
-	
-	    	<TextView
-	    	    android:id="@+id/idea_main_text"
-	    	    android:layout_width="wrap_content"
-	    	    android:layout_height="wrap_content"
-	    	    android:layout_centerVertical="true"
+
+    	<RelativeLayout
+    	    android:id="@+id/idea_child_header"
+    	    android:layout_width="fill_parent"
+    	    android:layout_height="60dp" >
+
+    		<ImageView
+    		    android:id="@+id/idea_child_header"
+    		    android:layout_width="fill_parent"
+    		    android:layout_height="fill_parent"
+    		    android:background="@drawable/navbar_red" />
+
+    		<TextView
+    		    android:id="@+id/idea_child_text"
+    		    android:layout_width="wrap_content"
+    		    android:layout_height="wrap_content"
+    		    android:layout_centerVertical="true"
 				android:layout_centerInParent="true"
-	    	    android:layout_marginTop="10dp"
+    		    android:layout_marginTop="10dp"
 				android:shadowColor="#888"
 				android:shadowDx="1.5"
 				android:shadowDy="1.5"
 				android:shadowRadius="1.5"
-	    	    android:textColor="@color/white"
-	    	    android:textSize="20dp" />
-	
-	        <ImageView
-	        	android:id="@+id/idea_main_back"
-	            android:layout_width="35dp"
-	            android:layout_height="35dp"
-	            android:layout_alignParentLeft="true"
-	            android:layout_centerVertical="true"
-	            android:layout_marginLeft="10dp"
-	            android:src="@drawable/back" />
-	
-	    </RelativeLayout>
-	
+    		    android:textColor="@color/white"
+    		    android:textSize="20dp" />
+
+    	    <ImageView
+    	    	android:id="@+id/idea_child_back"
+    	        android:layout_width="35dp"
+    	        android:layout_height="35dp"
+    	        android:layout_alignParentLeft="true"
+    	        android:layout_centerVertical="true"
+    	        android:layout_marginLeft="10dp"
+    	        android:src="@drawable/back" />
+
+    	</RelativeLayout>
+
 		<LinearLayout
 			android:orientation="horizontal"
 			android:layout_width="fill_parent"
@@ -95,7 +95,6 @@
 				android:layout_width="0dp"
 				android:layout_height="fill_parent"
 				android:gravity="center"
-				android:textSize="7sp"
 				android:hint="テーマ"  
 				android:layout_weight="1"/>
 			<View
@@ -168,13 +167,13 @@
 				android:background="@drawable/android_editbtn"
 				android:text="@string/dummy_button" />
 		</LinearLayout>
-	    <RelativeLayout
-	        android:id="@+id/driver_info_menu_bottom"
-	        android:layout_width="fill_parent"
-	        android:layout_height="@dimen/menu_bottom_height"
+    	<RelativeLayout
+    	    android:id="@+id/driver_info_menu_bottom"
+    	    android:layout_width="fill_parent"
+    	    android:layout_height="@dimen/menu_bottom_height"
 			android:layout_above="@+id/adView" >
-	        <include layout="@layout/menu_bottom" />
-		</RelativeLayout>
+    	    <include layout="@layout/menu_bottom" />
+    	</RelativeLayout>
 	    <com.google.ads.AdView
 			android:id="@+id/adView"
 			android:layout_width="fill_parent"

@@ -7,8 +7,11 @@ import java.util.List;
 import com.ry0000suke.idea.database.CreateDatabase;
 import com.ry0000suke.idea.database.ParentMapDAO;
 
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.database.Cursor;
@@ -16,8 +19,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -26,13 +32,12 @@ import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-public class AllViewActivity extends BaseActivity {
+public class AllViewActivity extends BaseActivity implements OnClickListener {
 
 	private int count1, count2;
 	private int count = 0;
 
 	private int[] sns_store_id;
-	private RelativeLayout all_view_ml;
 	private int firstCate_id; // category_id of first category when enter
 								// BookMarkActivity
 	private int idCateCurrent = -1; // Save id of category current for initial
@@ -47,9 +52,11 @@ public class AllViewActivity extends BaseActivity {
 	private Bitmap[] bitmapIcon_SNS;
 	private Drawable[] dIcon_SNS;
 
+	private ProgressDialog prog;
 	public Context context;
 	private final static int REQUEST_CODE_BOOKMARK_ACTIVITY = 1;
 
+	private int delete_flg = 0;
 	private TextView featureTitleHeader;
 	private ImageView featureTitleImage;
 	private TextView featureTitleDescription;
@@ -66,10 +73,9 @@ public class AllViewActivity extends BaseActivity {
 		super.loadController();
 
 		super.changeImageMenu(R.drawable.tabbar_home_1_1,
-				R.drawable.tabbar_defaultmap_1_2, R.drawable.tabbar_bookmark_2_3, 1);
+				R.drawable.tabbar_defaultmap_1_2, R.drawable.tabbar_bookmark_2_3, 3);
 		context = this;
 
-		all_view_ml = (RelativeLayout) findViewById(R.id.all_view_ml);
 		TextView title = (TextView) findViewById(R.id.all_view_text);
 		deleteEditBtn = (Button) findViewById(R.id.all_view_delete_edit);
 
@@ -77,14 +83,25 @@ public class AllViewActivity extends BaseActivity {
 
 		title.setText(getText(R.string.all_view_title));
 		deleteEditBtn.setText(getText(R.string.all_view_delete_edit));
+		deleteEditBtn.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (delete_flg == 0) {
+					showDeleteList();
+					deleteEditBtn.setText(getText(R.string.all_view_delete_done));
+					delete_flg = 1;
+				}
+				else {
+					showList();
+					deleteEditBtn.setText(getText(R.string.all_view_delete_edit));
+					delete_flg = 0;
+				}
+			
+			}
+		});
 
 		//
 		showList();
-		// // --------------------------------------------
-		// Intent intent = new Intent("TopActivity");
-		// sendBroadcast(intent);
-		// -------------------------------------------
-		//registerReceiver(receiverPathUndo, filterDragDrop);
 	}
 
 	@Override
@@ -94,16 +111,14 @@ public class AllViewActivity extends BaseActivity {
 
 	@Override
 	public void onClick(View v) {
+		super.onClick(v);
+
 		//switch (v.getId()) {
-		//case R.id.all_view_link:
-		//	Intent intent1 = new Intent();
-		//	intent1.setClass(this, FeaturePastActivity.class);
-		//	startActivity(intent1);
+		//case R.id.all_view_delete_edit:
 		//	break;
 		//default:
 		//	break;
 		//}
-	//	super.onClick(v);
 
 	//	idCateCurrent = v.getId();
 
@@ -117,6 +132,7 @@ public class AllViewActivity extends BaseActivity {
 	}
 
 	public void showList() {
+		pastList.removeAllViews();
 
 		// Open database
 		CreateDatabase db = new CreateDatabase(this);
@@ -132,7 +148,8 @@ public class AllViewActivity extends BaseActivity {
 
 				Bitmap icon = BitmapFactory.decodeResource(getResources(), R.drawable.map5);
 
-				View view = getLayoutInflater().inflate(R.layout.all_view_list, null);
+				//View view = getLayoutInflater().inflate(R.layout.all_view_list, null);
+				final View view = LayoutInflater.from(getBaseContext()).inflate(R.layout.all_view_list, null);
 
 				ImageView avatar = (ImageView) view.findViewById(R.id.all_view_list_image);
 				TextView titleText = (TextView) view.findViewById(R.id.all_view_list_title);
@@ -159,29 +176,108 @@ public class AllViewActivity extends BaseActivity {
 			} while (cursor.moveToNext());
 
 		}
-		//int layoutId = getResources().getIdentifier("feature_list" + featureType, "layout", getPackageName());
-		
-		//fAdapter.setOnClickListener(new View.OnClickListener() {
-		//	@Override
-		//	public void onClick(View v) {
-		//		Intent intent = new Intent();
-		//		intent.setClass(getApplicationContext(), StoreActivity.class);
-		//		//startActivityForResult(intent, REQUEST_CODE_BOOKMARK_ACTIVITY);
-		//		startActivity(intent);
-		//	}
-		//});
-
 		cursor.close();
 		db.close();
+	}
 
-		//lv.setAdapter(fAdapter);
-		//		listContentPremiumStore.setAdapter(fAdapter);
-		//if (featureType == PREMIUN_STORE) {
-		//	listContentPremiumStore.setAdapter(fAdapter);
-		//}
-		//else if (featureType == NORMAL_STORE) {
-		//	listContentNormalStore.setAdapter(fAdapter);
-		//}
+	public void showDeleteList() {
+		pastList.removeAllViews();
+
+		// Open database
+		CreateDatabase db = new CreateDatabase(this);
+		ParentMapDAO parentMapDAO = new ParentMapDAO(db.open());
+		Cursor cursor = parentMapDAO.getAllList();
+
+		if (cursor.getCount() > 0) {
+			cursor.moveToFirst();
+			int i = 0;
+			do {
+				final int parent_id = cursor.getInt(0);
+				String theme = cursor.getString(5);
+
+				Bitmap icon = BitmapFactory.decodeResource(getResources(), R.drawable.map5);
+
+				//View view = getLayoutInflater().inflate(R.layout.all_view_list, null);
+				final View view = LayoutInflater.from(getBaseContext()).inflate(R.layout.all_view_list, null);
+
+				ImageView avatar = (ImageView) view.findViewById(R.id.all_view_list_image);
+				TextView titleText = (TextView) view.findViewById(R.id.all_view_list_title);
+				ImageView arrow = (ImageView) view.findViewById(R.id.all_view_list_arrow);
+
+				avatar.setImageBitmap(icon);
+
+				titleText.setText(theme);
+				arrow.setBackgroundResource(R.drawable.remove);
+				arrow.setId(parent_id);
+
+				arrow.setOnClickListener(new View.OnClickListener() {
+					@Override
+					public void onClick(final View v) {
+						AlertDialog.Builder dialog = new AlertDialog.Builder(context);
+						dialog.setMessage(getText(R.string.all_view_delete_message))
+							.setPositiveButton(getText(R.string.all_view_delete_yes),
+								new DialogInterface.OnClickListener() {
+									public void onClick(DialogInterface dialog, int id) {
+				System.out.println("hogeeeeeeeeeeeeeeeeeeeeee gegege   parent_id " + v.getId());
+										DeleteCountryDBAsyncTask deleteCountryDBAsyncTask = new DeleteCountryDBAsyncTask(v.getId());
+										deleteCountryDBAsyncTask.execute("");
+									}
+								})
+								.setNegativeButton(getText(R.string.all_view_delete_no),
+									new DialogInterface.OnClickListener() {
+										public void onClick(DialogInterface dialog, int id) {
+											dialog.cancel();
+										}
+									});
+							dialog.show();
+						}
+					});
+				//});
+
+				pastList.addView(view);
+				i++;
+
+			} while (cursor.moveToNext());
+
+		}
+		cursor.close();
+		db.close();
+	}
+
+	private class DeleteCountryDBAsyncTask extends AsyncTask<String, Void, String> {
+		int id;
+
+		public DeleteCountryDBAsyncTask(int id) {
+			this.id = id;
+		}
+
+		@Override
+		protected void onPreExecute() {
+			prog = new ProgressDialog(context);
+			prog.setMessage(getText(R.string.all_view_delete_time));
+			prog.show();
+
+		}
+
+		@Override
+		protected String doInBackground(String... params) {
+			CreateDatabase db = new CreateDatabase(context);
+			System.out.println("hogeeeeee  id " + id);
+
+			ParentMapDAO parentMapDAO = new ParentMapDAO(db.open());
+			parentMapDAO.deleteByParentId(id);
+
+			db.close();
+
+			return null;
+		}
+
+		@Override
+		protected void onPostExecute(String page) {
+			showDeleteList();
+			prog.dismiss();
+
+		}
 	}
 
 

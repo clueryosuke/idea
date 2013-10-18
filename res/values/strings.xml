@@ -5,7 +5,7 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
 	<!-- Idea Main -->
-    <string name="idea_main_title">作成</string>
+    <string name="idea_main_title">作成: テーマ</string>
     <string name="idea_main_theme">テーマ</string>
     <string name="idea_main_delete_edit">削除</string>
     <string name="idea_main_save">保存</string>
@@ -20,6 +20,13 @@
 	<string name="map8">8</string>
 	<string name="map9">9</string>
 
+	<!-- Idea Main -->
+    <string name="idea_child_title">作成</string>
+    <string name="idea_child_theme">テーマ</string>
+    <string name="idea_child_delete_edit">削除</string>
+    <string name="idea_child_save">保存</string>
+    <string name="idea_child_all_view">全体</string>
+
 	<!-- Menu -->
     <string name="menu_top">トップ</string>
     <string name="menu_create">作成</string>
@@ -28,6 +35,11 @@
 	<!-- AllView -->
 	<string name="all_view_title">一覧</string>
 	<string name="all_view_delete_edit">削除</string>
+	<string name="all_view_delete_done">完了</string>
+	<string name="all_view_delete_message">削除しますか？</string>
+	<string name="all_view_delete_yes">はい</string>
+	<string name="all_view_delete_no">いいえ</string>
+	<string name="all_view_delete_time">削除中</string>
 	
 
 </resources>

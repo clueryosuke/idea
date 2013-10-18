@@ -1,73 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/all_view_ml"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+	xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:weightSum="1" 
+	android:background="#00000000">
 
-    <RelativeLayout
-        android:id="@+id/all_view_header"
-        android:layout_width="fill_parent"
-        android:layout_height="60dp" >
-
-    	<ImageView
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent">
+	
+    	<RelativeLayout
     	    android:id="@+id/all_view_header"
     	    android:layout_width="fill_parent"
-    	    android:layout_height="fill_parent"
-    	    android:background="@drawable/navbar_red" />
+    	    android:layout_height="60dp" >
 
-    	<TextView
-    	    android:id="@+id/all_view_text"
-    	    android:layout_width="wrap_content"
-    	    android:layout_height="wrap_content"
-    	    android:layout_centerVertical="true"
-			android:layout_centerInParent="true"
-    	    android:layout_marginTop="10dp"
-			android:shadowColor="#888"
-			android:shadowDx="1.5"
-			android:shadowDy="1.5"
-			android:shadowRadius="1.5"
-    	    android:textColor="@color/white"
-    	    android:textSize="20dp" />
-		
-		<Button
-			android:id="@+id/all_view_delete_edit"
-			android:layout_width="80dp"
-			android:layout_height="40dp"
-			android:layout_alignParentRight="true"
-			android:layout_marginRight="10dp"
-			android:layout_centerVertical="true"
-			android:textColor="@color/white"
-			android:textSize="14sp"
-			android:background="@drawable/android_editbtn" />
+    		<ImageView
+    		    android:id="@+id/all_view_header"
+    		    android:layout_width="fill_parent"
+    		    android:layout_height="fill_parent"
+    		    android:background="@drawable/navbar_red" />
 
-    </RelativeLayout>
+    		<TextView
+    		    android:id="@+id/all_view_text"
+    		    android:layout_width="wrap_content"
+    		    android:layout_height="wrap_content"
+    		    android:layout_centerVertical="true"
+				android:layout_centerInParent="true"
+    		    android:layout_marginTop="10dp"
+				android:shadowColor="#888"
+				android:shadowDx="1.5"
+				android:shadowDy="1.5"
+				android:shadowRadius="1.5"
+    		    android:textColor="@color/white"
+    		    android:textSize="20dp" />
+			
+			<Button
+				android:id="@+id/all_view_delete_edit"
+				android:layout_width="80dp"
+				android:layout_height="40dp"
+				android:layout_alignParentRight="true"
+				android:layout_marginRight="10dp"
+				android:layout_centerVertical="true"
+				android:textColor="@color/white"
+				android:textSize="14sp"
+				android:background="@drawable/android_editbtn" />
 
-	<ScrollView
-		android:id="@+id/feature_list"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_above="@+id/driver_info_menu_bottom"
-        android:layout_below="@+id/all_view_header" >
+    	</RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent" >
-            <LinearLayout
-                android:id="@+id/all_view_list"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:orientation="vertical" >
-            </LinearLayout>
-        </RelativeLayout>
-    </ScrollView>
+		<ScrollView
+			android:id="@+id/feature_list"
+    	    android:layout_width="fill_parent"
+    	    android:layout_height="0dp"
+			android:layout_weight="1"
+    	    android:layout_above="@+id/driver_info_menu_bottom"
+    	    android:layout_below="@+id/all_view_header" >
 
-    <RelativeLayout
-        android:id="@+id/driver_info_menu_bottom"
-        android:layout_width="fill_parent"
-        android:layout_height="@dimen/menu_bottom_height"
-        android:layout_alignParentBottom="true" >
-        <include layout="@layout/menu_bottom" />
-    </RelativeLayout>
+    	    <RelativeLayout
+    	        android:layout_width="fill_parent"
+    	        android:layout_height="wrap_content" >
+    	        <LinearLayout
+    	            android:id="@+id/all_view_list"
+    	            android:layout_width="wrap_content"
+    	            android:layout_height="wrap_content"
+    	            android:clickable="true"
+    	            android:orientation="vertical" >
+    	        </LinearLayout>
+    	    </RelativeLayout>
+    	</ScrollView>
+
+    	<RelativeLayout
+    	    android:id="@+id/driver_info_menu_bottom"
+    	    android:layout_width="fill_parent"
+    	    android:layout_height="@dimen/menu_bottom_height"
+			android:layout_above="@+id/adView" >
+    	    <include layout="@layout/menu_bottom" />
+    	</RelativeLayout>
+	    <com.google.ads.AdView
+			android:id="@+id/adView"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_alignParentBottom="true"
+			ads:adUnitId="a1525d7894c16f5"
+			ads:adSize="BANNER"
+			ads:loadAdOnCreate="true" />
+	</LinearLayout>
 
 </RelativeLayout>
