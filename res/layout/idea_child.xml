@@ -37,15 +37,6 @@
     		    android:textColor="@color/white"
     		    android:textSize="20dp" />
 
-    	    <ImageView
-    	    	android:id="@+id/idea_child_back"
-    	        android:layout_width="35dp"
-    	        android:layout_height="35dp"
-    	        android:layout_alignParentLeft="true"
-    	        android:layout_centerVertical="true"
-    	        android:layout_marginLeft="10dp"
-    	        android:src="@drawable/back" />
-
     	</RelativeLayout>
 
 		<LinearLayout

@@ -35,7 +35,6 @@ public class IdeaChild extends BaseActivity implements OnClickListener, OnItemSe
 	private int positionId;
 	private String word;
 	private TextView title;
-	private ImageView back;
 	private ImageView popover;
 	private Button saveBtn;
 	private Button allViewBtn;
@@ -61,12 +60,10 @@ public class IdeaChild extends BaseActivity implements OnClickListener, OnItemSe
 
 		title = (TextView) findViewById(R.id.idea_child_text);
 
-		back = (ImageView) findViewById(R.id.idea_child_back);
 		popover = (ImageView) findViewById(R.id.popup_menu);
 		saveBtn = (Button) findViewById(R.id.save_btn); 
 		allViewBtn = (Button) findViewById(R.id.all_view_btn); 
 
-		back.setOnClickListener(this);
 		popover.setOnClickListener(this);
 		setOnClick();
 
@@ -100,6 +97,13 @@ public class IdeaChild extends BaseActivity implements OnClickListener, OnItemSe
 		allViewBtn.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				saveRecode();
+				Intent intent = new Intent();
+				intent.setClass(getApplicationContext(), IdeaAll.class);
+				intent.putExtra("parent_id", parentId);
+				intent.putExtra("position_id", positionId);
+				intent.putExtra("word", word);
+				startActivity(intent);
 			}
 		});
 	}
@@ -108,11 +112,6 @@ public class IdeaChild extends BaseActivity implements OnClickListener, OnItemSe
 	public void onClick(View v) {
 		super.onClick(v);
 		switch (v.getId()) {	
-			case R.id.idea_child_back:
-				Intent intent = new Intent();
-				intent.setClass(getApplicationContext(), TopActivity.class);
-				startActivity(intent);
-				break;
 			case R.id.popup_menu:
 				PopupMenu menu = new PopupMenu(this);
 				menu.setOnItemSelectedListener(this);
@@ -137,13 +136,19 @@ public class IdeaChild extends BaseActivity implements OnClickListener, OnItemSe
 		CreateDatabase db = new CreateDatabase(this);
 		ChildMapDAO childMapDAO = new ChildMapDAO(db.open());
 		Cursor cursor = childMapDAO.getByParentIdandPositionId(parentId, positionId);
-		editText5.setText(word);
 		if (cursor.getCount() > 0) {
 			cursor.moveToFirst();
 			editText1.setText(cursor.getString(3));
 			editText2.setText(cursor.getString(4));
 			editText3.setText(cursor.getString(5));
 			editText4.setText(cursor.getString(6));
+			if (word != null) {
+				editText5.setText(word);
+			}
+			else {
+				editText5.setText(cursor.getString(7));
+				title.setText(positionId + ": " + cursor.getString(7));
+			}
 			editText6.setText(cursor.getString(8));
 			editText7.setText(cursor.getString(9));
 			editText8.setText(cursor.getString(10));
@@ -162,9 +167,66 @@ public class IdeaChild extends BaseActivity implements OnClickListener, OnItemSe
 		text8 = editText8.getText().toString();
 		text9 = editText9.getText().toString();
 		CreateDatabase db = new CreateDatabase(context);
+
+		// Parent Map
+		//ParentMapDAO parentMapDAO = new ParentMapDAO(db.open());
+		//Cursor cursor = parentMapDAO.getByParentId(parentId);
+		//cursor.moveToFirst();
+		//String parentText1 = cursor.getString(1);
+		//String parentText2 = cursor.getString(2);
+		//String parentText3 = cursor.getString(3);
+		//String parentText4 = cursor.getString(4);
+		//String parentText5 = cursor.getString(5);
+		//String parentText6 = cursor.getString(6);
+		//String parentText7 = cursor.getString(7);
+		//String parentText8 = cursor.getString(8);
+		//String parentText9 = cursor.getString(9);
+		//if (positionId == 1) {
+		//	parentMapDAO.updateParentMap(parentId, text5, parentText2, parentText3, 
+		//			parentText4, parentText5, parentText6, parentText7, parentText8, parentText9);
+		//}
+		//if (positionId == 2) {
+		//	parentMapDAO.updateParentMap(parentId, parentText1, text5, parentText3, 
+		//			parentText4, parentText5, parentText6, parentText7, parentText8, parentText9);
+		//}
+		//if (positionId == 3) {
+		//	parentMapDAO.updateParentMap(parentId, parentText1, parentText2, text5, 
+		//			parentText4, parentText5, parentText6, parentText7, parentText8, parentText9);
+		//}
+		//if (positionId == 4) {
+		//	parentMapDAO.updateParentMap(parentId, parentText1, parentText2, parentText3, 
+		//			text5, parentText5, parentText6, parentText7, parentText8, parentText9);
+		//}
+		//if (positionId == 5) {
+		//	parentMapDAO.updateParentMap(parentId, parentText1, parentText2, parentText3, 
+		//			parentText4, text5, parentText6, parentText7, parentText8, parentText9);
+		//}
+		//if (positionId == 6) {
+		//	parentMapDAO.updateParentMap(parentId, parentText1, parentText2, parentText3, 
+		//			parentText4, parentText5, text5, parentText7, parentText8, parentText9);
+		//}
+		//if (positionId == 7) {
+		//	parentMapDAO.updateParentMap(parentId, parentText1, parentText2, parentText3, 
+		//			parentText4, parentText5, parentText6, text5, parentText8, parentText9);
+		//}
+		//if (positionId == 8) {
+		//	parentMapDAO.updateParentMap(parentId, parentText1, parentText2, parentText3, 
+		//			parentText4, parentText5, parentText6, parentText7, text5, parentText9);
+		//}
+		//if (positionId == 9) {
+		//	parentMapDAO.updateParentMap(parentId, parentText1, parentText2, parentText3, 
+		//			parentText4, parentText5, parentText6, parentText7, parentText8, text5);
+		//}
+
+		// Child Map
 		ChildMapDAO childMapDAO = new ChildMapDAO(db.open());
-		// check transaction
-		childMapDAO.insertChildMap(parentId, positionId, text1, text2, text3, text4, text5, text6, text7, text8, text9);
+		Cursor cursor = childMapDAO.getByParentIdandPositionId(parentId, positionId);
+		if (cursor.getCount() > 0) {
+			childMapDAO.updateChildMap(parentId, positionId, text1, text2, text3, text4, text5, text6, text7, text8, text9);
+		}
+		else {
+			childMapDAO.insertChildMap(parentId, positionId, text1, text2, text3, text4, text5, text6, text7, text8, text9);
+		}
 		db.close();
 	}
 
@@ -172,17 +234,17 @@ public class IdeaChild extends BaseActivity implements OnClickListener, OnItemSe
 		saveRecode();
 		int position = item.getItemId() + 1;
 		Intent intent = new Intent();
+		String word = getParentEditTextByNum(position);
 		if (position == 5) {
 			intent.setClass(getApplicationContext(), IdeaMain.class);
 			intent.putExtra("parent_id", parentId);
 			startActivity(intent);
 		}
-		else if (position != positionId){
+		else if (position != positionId && word.length() > 0){
 			intent.setClass(getApplicationContext(), IdeaChild.class);
 			intent.putExtra("position", position);	
 			//int id = getParentIdByNewRecord();
 			intent.putExtra("parent_id", parentId);
-			String word = getParentEditTextByNum(position);
 			intent.putExtra("word", word);
 			startActivity(intent);
 		}

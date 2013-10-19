@@ -1,5 +1,6 @@
 package com.ry0000suke.idea;
 
+import com.ry0000suke.idea.database.ChildMapDAO;
 import com.ry0000suke.idea.database.CreateDatabase;
 import com.ry0000suke.idea.database.ParentMapDAO;
 import com.ry0000suke.idea.util.SystemUiHider;
@@ -34,6 +35,7 @@ public class IdeaMain extends BaseActivity implements OnClickListener, OnItemSel
 	private ImageView popover;
 	private Button saveBtn;
 	private Button allViewBtn;
+	private Button newMapBtn;
 	private EditText editText1, editText2, editText3, editText4, editText5, editText6, editText7, editText8, editText9;
 	private String text1, text2, text3, text4, text5, text6, text7, text8, text9;
 	@Override
@@ -56,6 +58,15 @@ public class IdeaMain extends BaseActivity implements OnClickListener, OnItemSel
 		popover = (ImageView) findViewById(R.id.popup_menu);
 		saveBtn = (Button) findViewById(R.id.save_btn); 
 		allViewBtn = (Button) findViewById(R.id.all_view_btn); 
+		newMapBtn = (Button) findViewById(R.id.idea_main_new_map); 
+		newMapBtn.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent();
+				intent.setClass(getApplicationContext(), IdeaMain.class);
+				startActivity(intent);
+			}
+		});
 
 		back.setOnClickListener(this);
 		popover.setOnClickListener(this);
@@ -64,6 +75,7 @@ public class IdeaMain extends BaseActivity implements OnClickListener, OnItemSel
 		title.setText(getText(R.string.idea_main_title));
 		saveBtn.setText(getText(R.string.idea_main_save));
 		allViewBtn.setText(getText(R.string.idea_main_all_view));
+		newMapBtn.setText(getText(R.string.idea_main_new_map));
 
 		editText1 = (EditText) findViewById(R.id.edittext1);
 		editText2 = (EditText) findViewById(R.id.edittext2);
@@ -90,6 +102,11 @@ public class IdeaMain extends BaseActivity implements OnClickListener, OnItemSel
 		allViewBtn.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				saveRecode();
+				Intent intent = new Intent();
+				intent.setClass(getApplicationContext(), IdeaAll.class);
+				intent.putExtra("parent_id", parentId);
+				startActivity(intent);
 			}
 		});
 	}
@@ -150,6 +167,64 @@ public class IdeaMain extends BaseActivity implements OnClickListener, OnItemSel
 		else {
 			parentMapDAO.updateParentMap(parentId, text1, text2, text3, text4, text5, text6, text7, text8, text9);
 		}
+
+		ChildMapDAO childMapDAO = new ChildMapDAO(db.open());
+		Cursor cursor = childMapDAO.getByParentId(parentId);
+			System.out.println("hogeeeeeeee total  " + cursor.getCount());
+		int total = cursor.getCount();
+		int j = 1;
+		cursor.moveToFirst();
+		for (int i = 0; i < 9; i++) {
+			int position_num = 0;
+
+			if (j <= total) {
+				position_num = cursor.getInt(2);
+				j = j +1;
+			}
+
+
+			int count = i + 1;
+			// record exist
+			System.out.println("hogeeeeeeee position_num " + position_num);
+			System.out.println("hogeeeeeeee count " + count);
+			System.out.println("hogeeeeeeee parentId " + parentId);
+			if (count == position_num) {
+				cursor.moveToNext();
+			}
+			// record not exist
+			else {
+				if (count == 1 && text1.length() > 0) {
+			System.out.println("hogeeeeeeee parentId hogeeeeeeeeeeeeeeeeeeee 1 " );
+			System.out.println("hogeeeeeeee parentId hogeeeeeeeeeeeeeeeeeeee text1 " + text1);
+					childMapDAO.insertChildMap(parentId, count, " ", " ", " ", " ", text1, " ", " ", " ", " ");
+				}
+				if (count == 2 && text2.length() > 0) {
+					childMapDAO.insertChildMap(parentId, count, "", "", "", "", text2, "", "", "", "");
+				}
+				if (count == 3 && text3.length() > 0) {
+					childMapDAO.insertChildMap(parentId, count, "", "", "", "", text3, "", "", "", "");
+				}
+				if (count == 4 && text4.length() > 0) {
+					childMapDAO.insertChildMap(parentId, count, "", "", "", "", text4, "", "", "", "");
+				}
+				if (count == 5 && text5.length() > 0) {
+					childMapDAO.insertChildMap(parentId, count, "", "", "", "", text5, "", "", "", "");
+				}
+				if (count == 6 && text6.length() > 0) {
+					childMapDAO.insertChildMap(parentId, count, "", "", "", "", text6, "", "", "", "");
+				}
+				if (count == 7 && text7.length() > 0) {
+					childMapDAO.insertChildMap(parentId, count, "", "", "", "", text7, "", "", "", "");
+				}
+				if (count == 8 && text8.length() > 0) {
+					childMapDAO.insertChildMap(parentId, count, "", "", "", "", text8, "", "", "", "");
+				}
+				if (count == 9 && text9.length() > 0) {
+					childMapDAO.insertChildMap(parentId, count, "", "", "", "", text9, "", "", "", "");
+				}
+			}
+		}
+
 		db.close();
 	}
 
@@ -168,13 +243,13 @@ public class IdeaMain extends BaseActivity implements OnClickListener, OnItemSel
 	public void onItemSelected(MenuItem item) {
 		saveRecode();
 		int position = item.getItemId() + 1;
-		if (position != 5) {
+		String word = getEditTextByNum(position);
+		if (position != 5 && word.length() > 0) {
 			Intent intent = new Intent();
 			intent.setClass(getApplicationContext(), IdeaChild.class);
 			intent.putExtra("position", position);	
 			//int id = getParentIdByNewRecord();
 			intent.putExtra("parent_id", parentId);
-			String word = getEditTextByNum(position);
 			intent.putExtra("word", word);	
 			startActivity(intent);
 		}

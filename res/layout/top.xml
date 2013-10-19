@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+    <ImageView
+    	android:id="@+id/top_image"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+		android:layout_centerInParent="true"
+		android:adjustViewBounds="true"
+		android:scaleType="centerCrop"
+        android:src="@drawable/tab_select" />
+
+    <TextView
+        android:id="@+id/top_app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+		android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+		android:shadowColor="#888"
+		android:shadowDx="1.5"
+		android:shadowDy="1.5"
+		android:shadowRadius="1.5"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
+
+	<Button
+		android:id="@+id/top_btn"
+		android:layout_width="240dp"
+		android:layout_height="60dp"
+		android:layout_centerHorizontal="true"
+		android:layout_alignParentBottom="true"
+		android:layout_marginBottom="60dp"
+		android:textColor="@color/white"
+		android:textSize="22sp"
+		android:background="@drawable/android_editbtn" />
+	<!--
+	<Button
+		android:id="@+id/top_btn"
+		android:layout_width="200dp"
+		android:layout_height="100dp"
+		android:layout_centerHorizontal="true"
+		android:layout_alignParentBottom="true"
+		android:layout_marginBottom="60dp"
+		android:textColor="@color/white"
+		android:textSize="30sp"
+		android:background="@drawable/android_editbtn" />
+	-->
+</RelativeLayout>

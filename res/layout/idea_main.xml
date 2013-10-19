@@ -46,6 +46,17 @@
 	            android:layout_marginLeft="10dp"
 	            android:src="@drawable/back" />
 	
+			<Button
+				android:id="@+id/idea_main_new_map"
+				android:layout_width="80dp"
+				android:layout_height="40dp"
+				android:layout_alignParentRight="true"
+				android:layout_marginRight="10dp"
+				android:layout_centerVertical="true"
+				android:textColor="@color/white"
+				android:textSize="14sp"
+				android:background="@drawable/android_editbtn" />
+
 	    </RelativeLayout>
 	
 		<LinearLayout
@@ -95,7 +106,6 @@
 				android:layout_width="0dp"
 				android:layout_height="fill_parent"
 				android:gravity="center"
-				android:textSize="7sp"
 				android:hint="テーマ"  
 				android:layout_weight="1"/>
 			<View
